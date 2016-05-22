@@ -2,7 +2,7 @@
     "BOT": "Welcome! Just say HELLO to get started.",
 
     "HELLO": "Hi there!\nI’m GGRbot, and I'm here to help your organization get credit for the great listening, acting, and learning that you're doing.\nWant to know more about how this works or are you ready to get started? %[Learn more](postback:learn_more) %[Get Started](postback:get_started)",
-    "GET_STARTED": "How have you listened?",
+    "GET STARTED": "First, tell us how have your organization has listened to your community, experts in your field, or others",
 
     "HI NICK": "Hi there!\nI’m the bot version of Nick, a data nerd from Washington DC.\n ![nick](https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAkqAAAAJDMwMWE1ZWY2LTE5ZTUtNGU5Yy05YjY0LTQzN2M0OGI0ZWRlMg.jpg)",
 
