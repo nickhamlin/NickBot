@@ -1,27 +1,17 @@
 {
+
     "BOT": "Welcome! Just say HELLO to get started.",
 
-    "HELLO": "Hi there!\nI’m GGRbot, and I'm here to help your organization get credit for the great listening, acting, and learning that you're doing.\nWant to know more about how this works or are you ready to get started? %[Learn more](postback:learn_more) %[Get Started](postback:get_started)",
+    "HELLO": "Hi there!\n I’m GGRbot, and I'm here to help your organization get credit for the great listening, acting, and learning that you're doing.\nWant to know more about how this works or are you ready to get started? %[Learn more](postback:learn_more) %[Get Started](postback:get_started)",
 
     "GET STARTED": "First, tell us how have your organization has listened to your community, experts in your field, or others",
     "LEARN MORE":"Great!, here's some more info for you!",
 
-    "HI NICK": "Hi there!\n
-        I’m the bot version of Nick, a data nerd from Washington DC.\n ![nick](https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAkqAAAAJDMwMWE1ZWY2LTE5ZTUtNGU5Yy05YjY0LTQzN2M0OGI0ZWRlMg.jpg)\n
-        I can help you with lots of stuff, what would you like to know?
-            %[More about Nick](postback:career)
-            %[How can I get in touch?](postback:contact)
-            %[Something interesting and random](postback:random)",
+    "HI NICK": "Hi there!\n I’m the bot version of Nick, a data nerd from Washington DC.\n ![nick](https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAkqAAAAJDMwMWE1ZWY2LTE5ZTUtNGU5Yy05YjY0LTQzN2M0OGI0ZWRlMg.jpg)\n I can help you with lots of stuff, what would you like to know? %[More about Nick](postback:career) %[How can I get in touch?](postback:contact) %[Something interesting and random](postback:random)",
 
-    "HOW CAN I GET IN TOUCH?":"Plenty of ways! What's easiest for you?
-            %[Tweet](postback:tweet)
-            %[Email](postback:email)
-            %[Live Chat](postback:chat)",
+    "HOW CAN I GET IN TOUCH?":"Plenty of ways! What's easiest for you? %[Tweet](postback:tweet) %[Email](postback:email) %[Live Chat](postback:chat)",
 
-    "MORE":"I can help you with lots of stuff, what would you like to know?
-                %[More about Nick](postback:career)
-                %[How can I get in touch?](postback:contact)
-                %[Something interesting and random](postback:random)",
+    "MORE":"I can help you with lots of stuff, what would you like to know? %[More about Nick](postback:career) %[How can I get in touch?](postback:contact) %[Something interesting and random](postback:random)",
 
     "EXAMPLE 1": "Hey, I'm so glad you set EstherBot up! Do you want to tell Esther that you're talking to her bot? %[Tell her](postback:twitter)",
     "TELL HER":"it worked!",
