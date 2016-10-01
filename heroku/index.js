@@ -108,13 +108,16 @@ app.post('/webhook', function(req, res, next) {
         }
 
         msg = messages[0];
+        console.log('not a postback');
+        console.log(msg);
     } else {
         msg = req.body.postbacks[0];
         msg.text = msg.action.text;
+        console.log('postback found!')
         console.log(msg);
     }
 
-    console.log(msg);
+
 
     stateMachine.receiveMessage(msg)
         .then(() => res.end())
