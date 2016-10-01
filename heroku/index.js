@@ -80,7 +80,7 @@ function createBot(appUser) {
     });
 }
 
-function advanceStateMachine(msg){
+function advanceStateMachine(req,res,msg){
 
     const stateMachine = new StateMachine({
         script,
@@ -108,7 +108,7 @@ function handleMessages(req, res) {
         return res.end();
     }
 
-    advanceStateMachine(messages[0]);
+    advanceStateMachine(req,res,messages[0]);
 
 }
 
@@ -118,7 +118,7 @@ function handlePostback(req, res) {
         res.end();
     }
 
-    advanceStateMachine(postback.action.text);
+    advanceStateMachine(req,res,postback.action.text);
 
 }
 
