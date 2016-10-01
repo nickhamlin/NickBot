@@ -80,6 +80,22 @@ function createBot(appUser) {
     });
 }
 
+function advanceStateMachine(msg){
+
+    const stateMachine = new StateMachine({
+        script,
+        bot: createBot(req.body.appUser)
+    });
+
+    stateMachine.receiveMessage(msg)
+        .then(() => res.end())
+        .catch((err) => {
+            console.error('SmoochBot error:', err);
+            console.error(err.stack);
+            res.end();
+        });
+}
+
 function handleMessages(req, res) {
     const messages = req.body.messages.reduce((prev, current) => {
         if (current.role === 'appUser') {
@@ -92,18 +108,8 @@ function handleMessages(req, res) {
         return res.end();
     }
 
-    const stateMachine = new StateMachine({
-        script,
-        bot: createBot(req.body.appUser)
-    });
+    advanceStateMachine(messages[0]);
 
-    stateMachine.receiveMessage(messages[0])
-        .then(() => res.end())
-        .catch((err) => {
-            console.error('SmoochBot error:', err);
-            console.error(err.stack);
-            res.end();
-        });
 }
 
 function handlePostback(req, res) {
@@ -112,8 +118,8 @@ function handlePostback(req, res) {
         res.end();
     }
 
-    createBot(req.body.appUser).say(`You said: ${postback.action.text} (payload was: ${postback.action.payload})`)
-        .then(() => res.end());
+    advanceStateMachine(postback.action.text);
+
 }
 
 app.post('/webhook', function(req, res, next) {
