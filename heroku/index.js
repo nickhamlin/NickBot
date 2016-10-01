@@ -117,16 +117,16 @@ function handlePostback(req, res) {
         script,
         bot: createBot(req.body.appUser)
     });
-    /*
+
     stateMachine.receiveMessage(postback.action.text)
         .then(() => res.end())
         .catch((err) => {
             console.error('SmoochBot error:', err);
             console.error(err.stack);
             res.end();
-        });*/
+        });
 
-    createBot(req.body.appUser).say(`You said: ${postback.action.text} (payload was: ${postback.action.payload})`).then(() => res.end());
+    //createBot(req.body.appUser).say(`You said: ${postback.action.text} (payload was: ${postback.action.payload})`).then(() => res.end());
 }
 
 app.post('/webhook', function(req, res, next) {
