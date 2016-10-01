@@ -1,5 +1,5 @@
 'use strict';
-
+console.log('hello world');
 const smoochBot = require('smooch-bot');
 const MemoryLock = smoochBot.MemoryLock;
 const SmoochApiStore = smoochBot.SmoochApiStore;
@@ -56,7 +56,7 @@ function createWebhook(smoochCore, target) {
                         console.error('Error creating Smooch webhook:', err);
                         console.error(err.stack);
                     });
-            }            
+            }
         )
         .catch((err) => {
             console.error('Error creating Smooch webhook:', err);
@@ -79,6 +79,7 @@ if (process.env.SERVICE_URL) {
 }
 
 app.post('/webhook', function(req, res, next) {
+    console.log("line 82 ran");
     var isPostback = req.body.trigger == "postback";
     var msg = '';
 
@@ -93,7 +94,7 @@ app.post('/webhook', function(req, res, next) {
             store,
             userId
         })
-    });    
+    });
 
     if(!isPostback) {
         const messages = req.body.messages.reduce((prev, current) => {
@@ -111,6 +112,7 @@ app.post('/webhook', function(req, res, next) {
     } else {
         msg = req.body.postbacks[0];
         msg.text = msg.action.text;
+        console.log(msg.text);
     }
 
     stateMachine.receiveMessage(msg)
