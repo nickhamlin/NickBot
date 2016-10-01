@@ -1,5 +1,5 @@
 'use strict';
-console.log('hello world');
+
 const smoochBot = require('smooch-bot');
 const MemoryLock = smoochBot.MemoryLock;
 const SmoochApiStore = smoochBot.SmoochApiStore;
@@ -79,7 +79,6 @@ if (process.env.SERVICE_URL) {
 }
 
 app.post('/webhook', function(req, res, next) {
-    console.log("line 82 ran");
     var isPostback = req.body.trigger == "postback";
     var msg = '';
 
@@ -112,8 +111,10 @@ app.post('/webhook', function(req, res, next) {
     } else {
         msg = req.body.postbacks[0];
         msg.text = msg.action.text;
-        console.log(msg.text);
+        console.log(msg);
     }
+
+    console.log(msg);
 
     stateMachine.receiveMessage(msg)
         .then(() => res.end())
