@@ -79,7 +79,7 @@ function createBot(appUser) {
         userId
     });
 }
-
+/*
 function handleMessages(req, res) {
     const messages = req.body.messages.reduce((prev, current) => {
         if (current.role === 'appUser') {
@@ -144,6 +144,49 @@ app.post('/webhook', function(req, res, next) {
         default:
             console.log('Ignoring unknown webhook trigger:', trigger);
     }
+});*/
+
+app.post('/webhook', function(req, res, next) {
+    var msg = '';
+
+    const appUser = req.body.appUser;
+    const userId = appUser.userId || appUser._id;
+    const stateMachine = new StateMachine({
+        script,
+        bot: new BetterSmoochApiBot({
+            name,
+            avatarUrl,
+            lock,
+            store,
+            userId
+        })
+    });
+
+    if(req.body.trigger != "postback") {
+        const messages = req.body.messages.reduce((prev, current) => {
+            if (current.role === 'appUser') {
+                prev.push(current);
+            }
+            return prev;
+        }, []);
+
+        if (messages.length === 0 && !isTrigger) {
+            return res.end();
+        }
+
+        msg = messages[0];
+    } else {
+        msg = req.body.postbacks[0];
+        msg.text = msg.action.text;
+    }
+
+    stateMachine.receiveMessage(msg)
+        .then(() => res.end())
+        .catch((err) => {
+            console.error('SmoochBot error:', err);
+            console.error(err.stack);
+            res.end();
+        });
 });
 
 var server = app.listen(process.env.PORT || 8000, function() {
