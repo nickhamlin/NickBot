@@ -107,12 +107,13 @@ function handleMessages(req, res) {
 }
 
 function handlePostback(req, res) {
+    console.log(req);
     const postback = req.body.postbacks[0];
     if (!postback || !postback.action) {
         res.end();
     }
-
-    const stateMachine = new StateMachine({
+    console.log(postback);
+    /*const stateMachine = new StateMachine({
         script,
         bot: createBot(req.body.appUser)
     });
@@ -123,9 +124,9 @@ function handlePostback(req, res) {
             console.error('SmoochBot error:', err);
             console.error(err.stack);
             res.end();
-        });
+        });*/
 
-    //createBot(req.body.appUser).say(`You said: ${postback.action.text} (payload was: ${postback.action.payload})`).then(() => res.end());
+    createBot(req.body.appUser).say(`You said: ${postback.action.text} (payload was: ${postback.action.payload})`).then(() => res.end());
 }
 
 app.post('/webhook', function(req, res, next) {
