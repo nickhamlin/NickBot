@@ -2,11 +2,14 @@
     "BOT": "Welcome! Just say HELLO to get started.",
 
     "HELLO": "Hi there!\nI’m GGRbot, and I'm here to help your organization get credit for the great listening, acting, and learning that you're doing.\nWant to know more about how this works or are you ready to get started? %[Learn more](postback:learn_more) %[Get Started](postback:get_started)",
+
     "GET STARTED": "First, tell us how have your organization has listened to your community, experts in your field, or others",
+    "LEARN MORE":"Great!, here's some more info for you!",
 
     "HI NICK": "Hi there!\nI’m the bot version of Nick, a data nerd from Washington DC.\n ![nick](https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAkqAAAAJDMwMWE1ZWY2LTE5ZTUtNGU5Yy05YjY0LTQzN2M0OGI0ZWRlMg.jpg)",
 
     "EXAMPLE 1": "Hey, I'm so glad you set EstherBot up! Do you want to tell Esther that you're talking to her bot? %[Tell her](postback:twitter)",
+    "EXAMPLE 1a": "Hey, I'm so glad you set EstherBot up! Do you want to tell Esther that you're talking to her bot? %[Tell her](reply:twitter)",
     "TELL HER":"it worked!",
     "EXAMPLE 2": "Let's tweet @ Esther so she knows you're setting a bot up. Here's a tweet that's ready to go: %[Tweet Esther](http://bit.ly/estherbot-tweet)",
     "EXAMPLE 3": "Hi there!\nI’m the bot version of Nick, a data scientist from Washington DC.\n![esther](https://raw.githubusercontent.com/esthercrawford/smooch-bot-example/master/img/esther.jpg)\nWant to know more about bots or learn about Esther? %[I'm here for the bot](postback:here_for_the_bot) %[Learn about Esther](postback:learn_about_esther) %[One random fact!](postback:random_fact)",
