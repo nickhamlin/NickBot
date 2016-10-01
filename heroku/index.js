@@ -107,17 +107,17 @@ function handleMessages(req, res) {
 }
 
 function handlePostback(req, res) {
-    console.log(req);
     const postback = req.body.postbacks[0];
     if (!postback || !postback.action) {
         res.end();
     }
     console.log(postback);
-    /*const stateMachine = new StateMachine({
+    console.log(postback.action.text);
+    const stateMachine = new StateMachine({
         script,
         bot: createBot(req.body.appUser)
     });
-
+    /*
     stateMachine.receiveMessage(postback.action.text)
         .then(() => res.end())
         .catch((err) => {
