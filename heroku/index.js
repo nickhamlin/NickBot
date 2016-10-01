@@ -80,6 +80,7 @@ if (process.env.SERVICE_URL) {
 
 app.post('/webhook', function(req, res, next) {
     var isPostback = req.body.trigger == "postback";
+    console.log(req.body);
     var msg = '';
 
     const appUser = req.body.appUser;
